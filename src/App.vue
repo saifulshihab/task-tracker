@@ -1,17 +1,57 @@
 <template>
 <div class="container">
-  <img alt="Vue logo" src="./assets/logo.png">
+  <Header title="Task Tracker" />
+  <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
 </div>
    
 </template>
 
 <script>
- 
+ import Header from './components/Header'
+ import Tasks from './components/Tasks'
 export default {
   name: 'App',
   components: {
-     
-  }
+     Header, Tasks
+  },
+  data(){
+    return {
+      tasks: []
+    } 
+  },
+  methods: {
+    deleteTask(id) {
+      if(confirm('Are you sure?')){
+        this.tasks = this.tasks.filter((task) => task.id !== id)
+      }
+    },
+    toggleReminder(id) {
+      this.tasks = this.tasks.map(data => data.id === id ? {...data, reminder: !data.reminder} : data)
+    }
+  },
+  created(){
+    this.tasks = [
+      {
+        id: 1,
+        text: 'Learning Django REST Framework',
+        day: 'March 1',
+        reminder: true
+      },
+      {
+        id: 2,
+        text: 'Learning Django REST Framework',
+        day: 'March 1',
+        reminder: true
+      },
+      {
+        id: 3,
+        text: 'Learning Django REST Framework',
+        day: 'March 1',
+        reminder: true
+      }
+    ]
+  },
+ 
 }
 </script>
 
