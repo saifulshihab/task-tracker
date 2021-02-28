@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Learning Django REST Framework",
+      "day": "March 1",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Searching for mess",
+      "day": "March 1",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Learning Django REST Framework",
+      "day": "March 1",
+      "reminder": true
+    },
+    {
+      "text": "AWS",
+      "day": "Mid May 2021",
+      "reminder": true,
+      "id": 271
+    }
+  ]
+}
